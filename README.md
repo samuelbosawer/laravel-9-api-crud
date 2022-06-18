@@ -10,8 +10,9 @@ Method post
 - *Request*
     ```
     http://127.0.0.1:8000/api/weekend/update/name={name}&job={job}&topic={topic}&date={date}&jam_mulai={jam_mulai}jam_selesai={jam_selesai}
-    ```
-    ```
+
+    //or
+
         'name' => $request->name,
         'job' =>  $request->job,
         'topic' => $request->topic,
@@ -20,7 +21,7 @@ Method post
         'jam_selesai' => $request->jam_selesai,
         'picture' => $imgname,
     ```
-    - *Response*
+- *Response*
     ```json
         {"code":200,
         "message":"Success",
