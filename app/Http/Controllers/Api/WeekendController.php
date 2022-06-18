@@ -59,8 +59,15 @@ class WeekendController extends Controller
                   'jam_mulai' => 'required',
                   'jam_selesai' => 'required',
             ]);
-            $imgname = time().$request->picture->getClientOriginalName();
-            $request->picture->move(public_path('images'), $imgname);
+            $imgname = '';
+
+            if($request->picture)
+            {
+                $imgname = time().$request->picture->getClientOriginalName();
+                $request->picture->move(public_path('images'), $imgname);
+            };
+
+           
           $weekend =  Weekendmodel::create([
                 'name' => $request->name,
                 'job' =>  $request->job,
@@ -143,7 +150,8 @@ class WeekendController extends Controller
         //         'picture' => '1.jpg',
         //      ]);
              if($request->image){
-                $data['image'] =  $request->file('image')->store('weekend');
+                $imgname = time().$request->picture->getClientOriginalName();
+                $request->picture->move(public_path('images'), $imgname);
             };
             $data['name'] =  $request->name;
             $data['job'] =  $request->job;
