@@ -11,23 +11,36 @@ Method post
     ```
     http://127.0.0.1:8000/api/weekend/update/name={name}&job={job}&topic={topic}&date={date}&jam_mulai={jam_mulai}jam_selesai={jam_selesai}
     ```
-
+    ```
+        'name' => $request->name,
+        'job' =>  $request->job,
+        'topic' => $request->topic,
+        'date' => $request->date,
+        'jam_mulai' => $request->jam_mulai,
+        'jam_selesai' => $request->jam_selesai,
+        'picture' => $imgname,
+    ```
     - *Response*
     ```json
-
+        {"code":200,
+        "message":"Success",
+        "data":[
+            {
+                "id":18,"name":"Sam",
+                "job":"Frelence",
+                "topic":"Web Security",
+                "date":"10-10-2022",
+                "jam_mulai":"18:00",
+                "jam_selesai":"20:00",
+                "picture":"1655554672Untitled.png",
+                "created_at":"2022-06-18T12:17:52.000000Z",
+                "updated_at":"2022-06-18T12:17:52.000000Z"
+                }
+            ]
+        }
     ```
 
-    - *Request*
-      ```php
-                'name' => $request->name,
-                'job' =>  $request->job,
-                'topic' => $request->topic,
-                'date' => $request->date,
-                'jam_mulai' => $request->jam_mulai,
-                'jam_selesai' => $request->jam_selesai,
-                'picture' => $imgname,
-    
-    ```
+   
 ### Update
 ### Read
 ### Delete
